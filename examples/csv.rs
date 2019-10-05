@@ -17,9 +17,7 @@ fn main() {
     let unsuccessful_paarse = CSVParser::parse(Rule::field, "this is no a nubmer");
     println!("{:?}", unsuccessful_paarse);
 
-    println!("---------------------");
-    let unparsed_file = fs::read_to_string("numbers.csv").expect("cannot read file");
-    // dbg!(&unparsed_file);
+    let unparsed_file = fs::read_to_string("examples/numbers.csv").expect("cannot read file");
 
     let file = CSVParser::parse(Rule::file, &unparsed_file)
         .expect("unsucessful parse")
