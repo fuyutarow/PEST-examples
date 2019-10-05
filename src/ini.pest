@@ -1,7 +1,8 @@
 char = { ASCII_ALPHANUMERIC | "." | "_" | "/" }
+WHITESPACE = _{ " " }
 
-name = { char+ }
-value = { char* }
+name = @{ char+ }
+value = @{ char* }
 
 section = { "[" ~ name ~ "]" }
 property = { name ~ "=" ~ value }
